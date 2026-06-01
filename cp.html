@@ -1,0 +1,1123 @@
+<!doctype html>
+<html lang="vi">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <title>Một Điều Nhỏ Dành Cho Em 🌸</title>
+
+    <link
+      href="https://fonts.googleapis.com/css2?family=Quicksand:wght@400;600;700&display=swap"
+      rel="stylesheet"
+    />
+
+    <style>
+      * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+        font-family: "Quicksand", sans-serif;
+      }
+
+      body {
+        overflow: hidden;
+        height: 100vh;
+        background: linear-gradient(
+          180deg,
+          #ffd6e7 0%,
+          #ffcce3 30%,
+          #f5c4ff 100%
+        );
+        position: relative;
+      }
+
+      #bg {
+        position: fixed;
+        inset: 0;
+        overflow: hidden;
+        z-index: -1;
+      }
+
+      .star {
+        position: absolute;
+        width: 3px;
+        height: 3px;
+        background: white;
+        border-radius: 50%;
+        animation: twinkle 4s infinite;
+      }
+
+      @keyframes twinkle {
+        0%,
+        100% {
+          opacity: 0.2;
+          transform: scale(0.8);
+        }
+        50% {
+          opacity: 1;
+          transform: scale(1.6);
+        }
+      }
+
+      .petals {
+        position: absolute;
+        font-size: 18px;
+        pointer-events: none;
+        animation: fall linear forwards;
+      }
+
+      @keyframes fall {
+        from {
+          transform: translateY(-100px) rotate(0deg);
+          opacity: 1;
+        }
+        to {
+          transform: translateY(110vh) rotate(720deg);
+          opacity: 0;
+        }
+      }
+
+      .screen {
+        position: absolute;
+        inset: 0;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        flex-direction: column;
+        transition: 1s;
+        padding: 25px;
+      }
+
+      .hidden {
+        opacity: 0;
+        pointer-events: none;
+        transform: scale(0.8);
+      }
+
+      .card {
+        width: min(90%, 500px);
+        padding: 30px;
+        border-radius: 30px;
+        background: rgba(255, 255, 255, 0.25);
+        backdrop-filter: blur(15px);
+        box-shadow:
+          0 10px 40px rgba(255, 255, 255, 0.3),
+          0 10px 60px rgba(255, 105, 180, 0.2);
+        text-align: center;
+      }
+
+      .title {
+        font-size: 34px;
+        font-weight: 700;
+        color: #ff3f87;
+        margin-bottom: 15px;
+      }
+
+      .text {
+        font-size: 18px;
+        line-height: 1.8;
+        color: #444;
+      }
+
+      .btn {
+        padding: 12px 25px;
+        border: none;
+        border-radius: 30px;
+        cursor: pointer;
+        font-size: 16px;
+        font-weight: 700;
+        margin-top: 20px;
+        transition: 0.3s;
+      }
+
+      .pink {
+        background: #ff5d9e;
+        color: white;
+      }
+
+      .white {
+        background: white;
+        color: #ff5d9e;
+      }
+
+      .gift {
+        font-size: 120px;
+        cursor: pointer;
+        animation: float 2s ease-in-out infinite;
+      }
+
+      @keyframes float {
+        50% {
+          transform: translateY(-15px);
+        }
+      }
+
+      .shake {
+        animation: shake 0.5s;
+      }
+
+      @keyframes shake {
+        0% {
+          transform: translateX(0);
+        }
+        25% {
+          transform: translateX(-10px);
+        }
+        50% {
+          transform: translateX(10px);
+        }
+        75% {
+          transform: translateX(-10px);
+        }
+        100% {
+          transform: translateX(0);
+        }
+      }
+
+      .envelope {
+        font-size: 120px;
+        cursor: pointer;
+        animation: drop 1.3s ease;
+      }
+
+      @keyframes drop {
+        from {
+          transform: translateY(-600px);
+        }
+        to {
+          transform: translateY(0);
+        }
+      }
+
+      .typewriter {
+        font-size: 22px;
+        line-height: 1.8;
+        color: #444;
+        min-height: 180px;
+        white-space: pre-wrap;
+      }
+
+      .anime-img {
+        width: 300px;
+        height: 420px;
+        border-radius: 25px;
+        object-fit: cover;
+        box-shadow:
+          0 0 30px rgba(255, 255, 255, 0.8),
+          0 0 60px rgba(255, 105, 180, 0.5);
+        animation: float 4s infinite ease-in-out;
+      }
+
+      .wheel {
+        width: 220px;
+        height: 220px;
+        border-radius: 50%;
+        background: conic-gradient(
+          #ff8fbf 0deg 120deg,
+          #ffd4e5 120deg 240deg,
+          #ffb2d0 240deg 360deg
+        );
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        font-size: 28px;
+        font-weight: bold;
+        color: white;
+        box-shadow: 0 0 40px rgba(255, 105, 180, 0.5);
+      }
+
+      .result {
+        font-size: 24px;
+        color: #ff3f87;
+        font-weight: bold;
+        line-height: 2;
+      }
+
+      .final {
+        font-size: 40px;
+        font-weight: bold;
+        color: #ff3f87;
+        text-align: center;
+        animation: pulse 1.5s infinite;
+      }
+
+      @keyframes pulse {
+        50% {
+          transform: scale(1.08);
+        }
+      }
+
+      .heart {
+        position: absolute;
+        font-size: 24px;
+        pointer-events: none;
+        animation: heartFly 6s linear forwards;
+      }
+
+      @keyframes heartFly {
+        from {
+          transform: translateY(0);
+          opacity: 1;
+        }
+        to {
+          transform: translateY(-120vh);
+          opacity: 0;
+        }
+      }
+    </style>
+  </head>
+
+  <body>
+    <div id="bg"></div>
+
+    <!-- MÀN 1 -->
+
+    <div class="screen" id="s1">
+      <div class="card">
+        <div class="gift" id="gift">🎁</div>
+
+        <h1 class="title">Có người gửi Anh Thư một món quà 🌸</h1>
+
+        <p class="text">Hãy chạm vào hộp quà nhé</p>
+      </div>
+    </div>
+
+    <!-- MÀN 2 -->
+
+    <div class="screen hidden" id="s2">
+      <div class="card">
+        <h1 class="title">Khoan đã 😳</h1>
+
+        <p class="text">Mở món quà này có thể khiến con mỉm cười đó...</p>
+
+        <button class="btn pink" id="yesBtn">Mở tiếp 💖</button>
+
+        <button class="btn white" id="noBtn">Không 😝</button>
+      </div>
+    </div>
+
+    <!-- MÀN 3 -->
+
+    <div class="screen hidden" id="s3">
+      <div class="envelope" id="envelope">💌</div>
+
+      <h2 class="title">Một lá thư vừa tới</h2>
+
+      <p class="text">Chạm vào phong thư nha ✨</p>
+    </div>
+
+    <!-- MÀN 4 -->
+
+    <div class="screen hidden" id="s4">
+      <div class="card">
+        <div class="typewriter" id="typeText"></div>
+
+        <button class="btn pink" id="next1">Tiếp tục 🌷</button>
+      </div>
+    </div>
+  </body>
+</html>
+<!-- MÀN 5 -->
+
+<div class="screen hidden" id="s5">
+
+<div class="card">
+
+<h1 class="title">
+🌸 Một lời nhắn nhỏ
+</h1>
+
+<p class="text">
+Nếu hôm nay Anh Thư đã có một ngày vui vẻ...
+<br><br>
+Thì thật tuyệt vời ✨
+<br><br>
+Hãy giữ nụ cười đó thật lâu nhé.
+</p>
+
+<button
+class="btn pink"
+id="next2">
+ con bít rồi ạ 😌
+</button>
+
+</div>
+
+</div>
+
+<!-- MÀN 6 -->
+
+<div class="screen hidden" id="s6">
+
+<div class="card">
+
+<h1 class="title">
+🌷 Còn nếu hôm nay con hơi mệt...
+</h1>
+
+<p class="text">
+Thì hãy nghỉ ngơi một chút nha.
+<br><br>
+Không cần lúc nào cũng phải mạnh mẽ.
+<br><br>
+Một ngày không hoàn hảo cũng không sao cả 💖
+</p>
+
+<button
+class="btn pink"
+id="next3">
+Tiếp tục ✨
+</button>
+
+</div>
+
+</div>
+
+<!-- MÀN 7 -->
+
+<div class="screen hidden" id="s7">
+
+<div class="card">
+
+<h1 class="title">
+🎀 Tặng em cái này
+</h1>
+
+<img
+class="anime-img"
+src="https://media.istockphoto.com/id/119732089/vi/anh/hoa-dại-posy.jpg?s=612x612&w=0&k=20&c=sJQz2garKjxu-kTwUKp_x0inQ69aUwHvh2RLZ7xPJXw="
+alt="cute"/>
+
+<p
+style="
+margin-top:20px;
+font-size:18px;
+color:#555;">
+Tạm thời chưa có hoa thật 🌸
+<br>
+Nên tặng con một bông hoa online trước nha
+</p>
+
+<button
+class="btn pink"
+id="next4">
+Dễ thương đó 😝
+</button>
+
+</div>
+
+</div>
+
+<!-- MÀN 8 -->
+
+<div class="screen hidden" id="s8">
+
+<div class="card">
+
+<h1 class="title">
+🎡 Vòng quay may mắn
+</h1>
+
+<div
+class="wheel"
+id="wheel">
+🎁
+</div>
+
+<button
+class="btn pink"
+id="spinBtn">
+Quay thử đi
+</button>
+
+</div>
+
+</div>
+
+<!-- MÀN 9 -->
+
+<div class="screen hidden" id="s9">
+
+<div class="card">
+
+<h1 class="title">
+🎉 Chúc mừng
+</h1>
+
+<div class="result">
+
++999 điểm vui vẻ 🌸
+<br>
+
++999 điểm may mắn ✨
+<br>
+
++999 điểm đáng yêu 💖
+
+</div>
+
+<button
+class="btn pink"
+id="next5">
+Còn nữa sao? 😳
+</button>
+
+</div>
+
+</div>
+
+<!-- MÀN 10 -->
+
+<div class="screen hidden" id="s10">
+
+<div class="card">
+
+<div class="final">
+
+Chúc con luôn vui vẻ 🌸
+
+</div>
+
+<p
+style="
+margin-top:25px;
+font-size:20px;
+line-height:1.8;
+color:#555;">
+
+Cảm ơn vì đã dành vài phút
+cho món quà nhỏ này ✨
+
+<br><br>
+
+Mong rằng những ngày tới
+sẽ có thật nhiều điều tốt đẹp
+đến với con 🌷
+
+</p>
+
+<button
+class="btn pink"
+id="next6">
+Dòng cuối cùng 💌
+</button>
+
+</div>
+
+</div>
+
+<!-- MÀN 11 -->
+
+<div class="screen hidden" id="s11">
+
+<div class="card">
+
+<h1
+style="
+font-size:42px;
+color:#ff3f87;
+margin-bottom:20px;">
+
+🌸
+
+</h1>
+
+<p
+style="
+font-size:22px;
+line-height:2;
+color:#555;">
+
+Người gửi: Cậu Chung
+<br><br>
+
+Chúc Anh Thư ngày 1/6
+luôn luôn vui vẻ nè ✨
+
+</p>
+
+</div>
+
+</div>
+
+<!-- CHỖ NHẠC -->
+
+<audio id="music" loop>
+  <source src="lua-gan-rom.mp3" type="audio/mpeg">
+</audio>
+<script>
+  window.addEventListener('DOMContentLoaded', () => {
+    const audio = document.getElementById('music');
+    
+    // Tạo một sự kiện: Chỉ cần người dùng chạm hoặc click bất kỳ đâu trên màn hình, nhạc sẽ phát
+    document.addEventListener('click', function() {
+      if (audio.paused) {
+        audio.play().then(() => {
+          console.log("Nhạc đang phát thành công!");
+        }).catch(err => {
+          console.log("Trình duyệt vẫn chặn: ", err);
+        });
+      }
+    }, { once: true }); // Thuộc tính { once: true } để lệnh này chỉ chạy duy nhất 1 lần đầu tiên
+  });
+</script>
+
+<script>
+
+const screens =
+document.querySelectorAll(".screen");
+
+function show(id){
+
+screens.forEach(
+s=>s.classList.add("hidden")
+);
+
+document
+.getElementById(id)
+.classList.remove("hidden");
+
+}
+
+const bg =
+document.getElementById("bg");
+
+for(let i=0;i<250;i++){
+
+const star =
+document.createElement("div");
+
+star.className="star";
+
+star.style.left=
+Math.random()*100+"%";
+
+star.style.top=
+Math.random()*100+"%";
+
+star.style.animationDelay=
+Math.random()*4+"s";
+
+bg.appendChild(star);
+
+}
+function createPetal(){
+
+const petal =
+document.createElement("div");
+
+petal.className = "petals";
+
+petal.innerHTML =
+["🌸","🌷","💮","✨"]
+[Math.floor(Math.random()*4)];
+
+petal.style.left =
+Math.random()*100+"vw";
+
+petal.style.fontSize =
+(15+Math.random()*20)+"px";
+
+petal.style.animationDuration =
+(5+Math.random()*5)+"s";
+
+document.body.appendChild(petal);
+
+setTimeout(()=>{
+petal.remove();
+},10000);
+
+}
+
+setInterval(createPetal,500);
+
+function createHeart(){
+
+const heart =
+document.createElement("div");
+
+heart.className="heart";
+
+heart.innerHTML=
+["💖","💕","💗","💞"]
+[Math.floor(Math.random()*4)];
+
+heart.style.left=
+Math.random()*100+"vw";
+
+heart.style.bottom="-20px";
+
+heart.style.fontSize=
+(20+Math.random()*20)+"px";
+
+document.body.appendChild(heart);
+
+setTimeout(()=>{
+heart.remove();
+},6000);
+
+}
+
+setInterval(createHeart,900);
+
+const gift =
+document.getElementById("gift");
+
+gift.onclick=()=>{
+
+gift.classList.add("shake");
+
+setTimeout(()=>{
+
+show("s2");
+
+},700);
+
+};
+
+const noBtn =
+document.getElementById("noBtn");
+
+noBtn.addEventListener(
+"mouseover",
+()=>{
+
+const x=
+Math.random()*250-125;
+
+const y=
+Math.random()*150-75;
+
+noBtn.style.transform=
+`translate(${x}px,${y}px)`;
+
+}
+);
+
+const music =
+document.getElementById("music");
+
+document
+.getElementById("yesBtn")
+.onclick=()=>{
+
+show("s3");
+
+music.play().catch(()=>{});
+
+};
+
+const envelope =
+document.getElementById("envelope");
+
+envelope.onclick=()=>{
+
+show("s4");
+
+typeWriter(
+`Xin chào em 🌸
+
+Nếu em đang đọc được những dòng này...
+
+thì có nghĩa là em đã vượt qua vài thử thách nho nhỏ 😝
+
+Món quà này không có gì quá đặc biệt.
+
+Chỉ là một chút thời gian,
+một chút sự dễ thương,
+
+và một chút lời chúc dành cho em thôi ✨`
+);
+
+};
+
+function typeWriter(text){
+
+const target =
+document.getElementById("typeText");
+
+target.innerHTML="";
+
+let i=0;
+
+const timer=
+setInterval(()=>{
+
+target.innerHTML +=
+text.charAt(i);
+
+i++;
+
+if(i>=text.length){
+
+clearInterval(timer);
+
+}
+
+},35);
+
+}
+document
+.getElementById("next1")
+.onclick=()=>{
+
+show("s5");
+
+};
+
+document
+.getElementById("next2")
+.onclick=()=>{
+
+show("s6");
+
+};
+
+document
+.getElementById("next3")
+.onclick=()=>{
+
+show("s7");
+
+};
+
+document
+.getElementById("next4")
+.onclick=()=>{
+
+show("s8");
+
+};
+
+const wheel =
+document.getElementById("wheel");
+
+const spinBtn =
+document.getElementById("spinBtn");
+
+let spun = false;
+
+spinBtn.onclick = ()=>{
+
+if(spun) return;
+
+spun = true;
+
+spinBtn.disabled = true;
+
+wheel.style.transition =
+"transform 4s cubic-bezier(.2,.8,.2,1)";
+
+const randomRotate =
+3600 + Math.random()*720;
+
+wheel.style.transform =
+`rotate(${randomRotate}deg)`;
+
+spinBtn.innerHTML =
+"Đang quay... ✨";
+
+setTimeout(()=>{
+
+show("s9");
+
+},4300);
+
+};
+
+document
+.getElementById("next5")
+.onclick=()=>{
+
+show("s10");
+
+fireworkHearts();
+
+};
+
+document
+.getElementById("next6")
+.onclick=()=>{
+
+show("s11");
+
+megaHeartRain();
+
+};
+
+function fireworkHearts(){
+
+for(let i=0;i<80;i++){
+
+setTimeout(()=>{
+
+const heart =
+document.createElement("div");
+
+heart.className="heart";
+
+heart.innerHTML=
+["💖","💕","💗","💞"]
+[Math.floor(Math.random()*4)];
+
+heart.style.left=
+"50vw";
+
+heart.style.top=
+"50vh";
+
+heart.style.position=
+"fixed";
+
+const angle =
+Math.random()*360;
+
+const distance =
+100 + Math.random()*300;
+
+heart.animate(
+
+[
+{
+transform:
+"translate(0,0) scale(.5)",
+opacity:1
+},
+
+{
+transform:
+`translate(
+${Math.cos(angle*Math.PI/180)*distance}px,
+${Math.sin(angle*Math.PI/180)*distance}px
+)
+scale(1.3)`,
+
+opacity:0
+}
+
+],
+
+{
+duration:2000
+}
+
+);
+
+document.body.appendChild(
+heart
+);
+
+setTimeout(()=>{
+
+heart.remove();
+
+},2000);
+
+},i*30);
+
+}
+
+}
+function megaHeartRain(){
+
+let count = 0;
+
+const rain =
+setInterval(()=>{
+
+for(let i=0;i<8;i++){
+
+const heart =
+document.createElement("div");
+
+heart.className = "heart";
+
+heart.innerHTML =
+["💖","💕","💗","💞","🌸","✨"]
+[Math.floor(Math.random()*6)];
+
+heart.style.position =
+"fixed";
+
+heart.style.left =
+Math.random()*100+"vw";
+
+heart.style.top =
+"-50px";
+
+heart.style.fontSize =
+(20+Math.random()*35)+"px";
+
+heart.animate(
+
+[
+{
+transform:
+"translateY(0) rotate(0deg)",
+opacity:1
+},
+
+{
+transform:
+`translateY(${window.innerHeight+150}px)
+rotate(${360+Math.random()*720}deg)`,
+
+opacity:0
+}
+
+],
+
+{
+duration:
+4000 + Math.random()*3000,
+
+easing:"linear"
+}
+
+);
+
+document.body.appendChild(
+heart
+);
+
+setTimeout(()=>{
+heart.remove();
+},7000);
+
+}
+
+count++;
+
+if(count>40){
+
+clearInterval(rain);
+
+}
+
+},150);
+
+}
+
+/* Hiệu ứng click phát sáng */
+
+document.addEventListener(
+"click",
+function(e){
+
+const spark =
+document.createElement("div");
+
+spark.style.position =
+"fixed";
+
+spark.style.left =
+e.clientX+"px";
+
+spark.style.top =
+e.clientY+"px";
+
+spark.style.width =
+"20px";
+
+spark.style.height =
+"20px";
+
+spark.style.borderRadius =
+"50%";
+
+spark.style.pointerEvents =
+"none";
+
+spark.style.background =
+"rgba(255,255,255,.9)";
+
+spark.style.boxShadow =
+"0 0 30px white";
+
+document.body.appendChild(
+spark
+);
+
+spark.animate(
+
+[
+{
+transform:
+"translate(-50%,-50%) scale(.2)",
+opacity:1
+},
+
+{
+transform:
+"translate(-50%,-50%) scale(4)",
+opacity:0
+}
+
+],
+
+{
+duration:700
+}
+
+);
+
+setTimeout(()=>{
+
+spark.remove();
+
+},700);
+
+}
+);
+
+/* Tự động tạo cảm giác sống động */
+
+setInterval(()=>{
+
+const flash =
+document.createElement("div");
+
+flash.style.position =
+"fixed";
+
+flash.style.inset = 0;
+
+flash.style.pointerEvents =
+"none";
+
+flash.style.background =
+"radial-gradient(circle, rgba(255,255,255,.15), transparent 60%)";
+
+flash.style.opacity = 0;
+
+document.body.appendChild(
+flash
+);
+
+flash.animate(
+
+[
+{opacity:0},
+{opacity:.5},
+{opacity:0}
+
+],
+
+{
+duration:1200
+}
+
+);
+
+setTimeout(()=>{
+
+flash.remove();
+
+},1200);
+
+},12000);
+
+</script>
+
+</body>
+</html>
